@@ -3,8 +3,7 @@
 #include <map>
 #include "tstack.h"
 
-int prioritet(char operation)
-{
+int prioritet(char operation) {
 	switch (operation) {
 	case '+':
 		return 1;
@@ -18,7 +17,7 @@ int prioritet(char operation)
 	case '/':
 		return 2;
 		break;
-	default: 
+	default:
 		return 0;
 		break;
 	}
@@ -31,7 +30,7 @@ bool IsOperation(char symbol) {
 	if ((symbol >= 40) && (symbol <= 43)) return true;
 	if ((symbol == 45) || (symbol == 47)) return true;
 	return false;
-} 
+}
 std::string infx2pstfx(std::string inf) {
 	TStack<char, 100> stack1;
 	std::string res;
@@ -57,7 +56,8 @@ std::string infx2pstfx(std::string inf) {
 			} else if (prioritet(inf[i]) > prioritet(stack1.get())) {
 				stack1.push(inf[i]);
 			} else if (prioritet(inf[i]) <= prioritet(stack1.get())) {
-				while ((!stack1.IsEmpty()) && (prioritet(inf[i]) <= prioritet(stack1.get()))) {
+				while ((!stack1.IsEmpty()) && 
+					(prioritet(inf[i]) <= prioritet(stack1.get()))) {
 					res += stack1.pop();
 					if (i != inf.length() - 1) {
 						res += " ";
