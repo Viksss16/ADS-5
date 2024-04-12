@@ -49,7 +49,9 @@ std::string infx2pstfx(std::string inf) {
 			} else if (inf[i] == ')') {
 				while ((!stack1.IsEmpty()) && (stack1.get() != '(')) {
 					res += stack1.pop();
-					res += ' ';
+					if (i != inf.length() - 1) {
+				res += " ";
+					}
 				}
 				stack1.pop();
 			} else if (prioritet(inf[i]) > prioritet(stack1.get())) {
