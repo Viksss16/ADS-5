@@ -3,26 +3,26 @@
 #include <map>
 #include "tstack.h"
 
-int prioritet(char operation)
+static int prioritet(char operation)
 {
 	switch (operation) {
 	case '(':
 		return 0;
 		break;
-	case ')':
-		return 1 ;
-		break;
 	case '+':
-		return 2;
+		return 1;
 		break;
 	case '-':
-		return 2;
+		return 1;
 		break;
 	case '*':
-		return 3;
+		return 2;
 		break;
 	case '/':
-		return 3;
+		return 2;
+		break;
+	default: 
+		std::cout << "undefined" << std::endl;
 		break;
 	}
 }
