@@ -6,20 +6,20 @@
 int prioritet(char operation) {
   switch (operation) {
     case '+':
-	return 1;
-	break;
+      return 1;
+      break;
     case '-':
-	return 1;
-	break;
+      return 1;
+      break;
     case '*':
-	return 2;
-	break;
+      return 2;
+      break;
     case '/':
-	return 2;
-	break;
+      return 2;
+      break;
     default:
-	return 0;
-	break;
+      return 0;
+      break;
   }
 }
 bool IsNumber(char symbol) {
@@ -36,10 +36,10 @@ std::string infx2pstfx(std::string inf) {
   std::string res;
   for (int i = 0; i < inf.length(); i++) {
     if (IsNumber(inf[i])) {
-	res += inf[i];
-	if (i < inf.length() - 1) {
-	  if (!IsNumber(inf[i + 1])) res += ' ';
-	}
+      res += inf[i];
+      if (i < inf.length() - 1) {
+        if (!IsNumber(inf[i + 1])) res += ' ';
+      }
     } else if (IsOperation(inf[i])) {
         if (inf[i] == '(') {
           stack1.push(inf[i]);
