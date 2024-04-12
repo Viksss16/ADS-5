@@ -2,14 +2,10 @@
 #include <string>
 #include <map>
 #include "tstack.h"
-#include <iostream>
 
-static int prioritet(char operation)
+int prioritet(char operation)
 {
 	switch (operation) {
-	case '(':
-		return 0;
-		break;
 	case '+':
 		return 1;
 		break;
@@ -23,7 +19,7 @@ static int prioritet(char operation)
 		return 2;
 		break;
 	default: 
-		std::cout << "undefined" << std::endl;
+		return 0;
 		break;
 	}
 }
