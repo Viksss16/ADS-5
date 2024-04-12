@@ -2,6 +2,7 @@
 #include <string>
 #include <map>
 #include "tstack.h"
+#include <iostream>
 
 static int prioritet(char operation)
 {
