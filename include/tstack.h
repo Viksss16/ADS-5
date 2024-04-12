@@ -17,7 +17,7 @@ class TStack {
       } else {
           throw std::string("is full");
       }
-    } 
+    }
     T get() {
       if (top > 0) {
         return data[top - 1];
